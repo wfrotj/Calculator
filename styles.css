@@ -3,6 +3,7 @@
   margin: 0;
   box-sizing: border-box;
 }
+/*
 .main {
   display: flex;
 }
@@ -29,4 +30,82 @@ button {
   cursor: pointer;
   font-size: 30px;
   font-weight: 600;
+}
+.clear {
+  width: 140px;
+}
+.delete {
+  width: 140px;
+}*/
+#root {
+  background-color: gray;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  margin-bottom: 0.5em;
+}
+.main {
+  border: 1px solid black;
+  padding: 0.5em;
+  background-color: black;
+}
+.display {
+  text-align: right;
+  background-color: black;
+  color: white;
+  padding-top: 10px;
+  margin-bottom: 0.5em;
+}
+
+.small-display {
+  font-size: 16px;
+  color: white;
+  height: 16px;
+}
+
+.large-display {
+  font-size: 32px;
+  height: 32px;
+}
+
+.inputs {
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5em;
+}
+.inputs button {
+  font-size: 15px;
+  padding: 5px;
+  background-color: #313131;
+  border: 1px solid grey;
+  color: #f2f2f2;
+}
+
+.inputs button:hover {
+  cursor: pointer;
+}
+
+.is-zero,
+.clear {
+  grid-column: span 3;
+}
+.is-zero {
+  background-color: #313131;
+}
+.clear {
+  background-color: #9f9f9f !important;
+  color: #070707 !important;
+}
+#times,
+#minus,
+#divide,
+#plus,
+#equals {
+  background-color: #f79a06 !important;
+  color: white !important;
 }

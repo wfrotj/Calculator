@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-    <title>Document</title>
+    <title>JS Calculator</title>
   </head>
   <body>
-    <div class="main">
+    <!--<div class="main">
       <section class="button-container">
-        <section class="head" id="head"></section>
+        <h1 class="head" id="head"></h1>
         <button class="seven" id="seven">7</button>
         <button class="eight" id="eight">8</button>
         <button class="nine" id="nine">9</button>
@@ -27,7 +27,41 @@
         <button class="point" id="point">.</button>
         <button class="addition" id="addition">+</button>
         <button class="equals" id="equals">&equals;</button>
+        <button class="clear">C</button>
+        <button class="delete">del</button>
       </section>
+    </div> -->
+    <div id="root">
+      <h1>Calculator</h1>
+      <div class="main">
+        <div class="display">
+          <p class="small-display"></p>
+          <p class="large-display">0</p>
+        </div>
+        <div class="inputs">
+          <button class="clear">C</button>
+          <button id="divide" class="operators">&divide;</button>
+
+          <button class="is-num">7</button>
+          <button class="is-num">8</button>
+          <button class="is-num">9</button>
+          <button id="times" class="operators">&times;</button>
+
+          <button class="is-num">4</button>
+          <button class="is-num">5</button>
+          <button class="is-num">6</button>
+          <button id="minus" class="operators">&minus;</button>
+
+          <button class="is-num">1</button>
+          <button class="is-num">2</button>
+          <button class="is-num">3</button>
+          <button id="plus" class="operators">&plus;</button>
+
+          <button class="is-num is-zero">0</button>
+
+          <button id="equals">&equals;</button>
+        </div>
+      </div>
     </div>
 
     <script src="script.js"></script>

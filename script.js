@@ -17,13 +17,14 @@ buttons.forEach(function (button) {
 });
 */
 
-let currentInput = "";
-let previousInput = "";
 const numberButtons = document.querySelectorAll(".is-num");
 const largeDisplay = document.querySelector(".large-display");
 const operatorsButton = document.querySelectorAll(".operators");
 const clearButton = document.querySelector(".clear");
 const smallDisplay = document.querySelector(".small-display");
+const resetButton = document.querySelector(".reset");
+let currentInput = "";
+let previousInput = "";
 
 numberButtons.forEach((button) => {
   button.addEventListener("click", (event) => {
@@ -36,10 +37,17 @@ clearButton.addEventListener("click", () => {
   currentInput = "";
   largeDisplay.textContent = currentInput;
 });
-
+resetButton.addEventListener("click", () => {
+  currentInput = "";
+  largeDisplay.textContent = currentInput;
+  previousInput = "";
+  smallDisplay.textContent = previousInput;
+});
 operatorsButton.forEach((button) => {
   button.addEventListener("click", (event) => {
-    smallDisplay.textContent = largeDisplay.textContent;
+    smallDisplay.textContent += largeDisplay.textContent + button.innerHTML;
+    currentInput = "";
+    largeDisplay.textContent = currentInput;
   });
 });
 

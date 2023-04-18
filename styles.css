@@ -54,22 +54,24 @@ h1 {
   background-color: black;
 }
 .display {
-  text-align: right;
-  background-color: black;
-  color: white;
-  padding-top: 10px;
-  margin-bottom: 0.5em;
+  display: flex;
+  flex-direction: column;
 }
 
 .small-display {
   font-size: 16px;
   color: white;
   height: 16px;
+  text-align: left;
 }
 
 .large-display {
   font-size: 32px;
   height: 32px;
+  color: white;
+  width: 150px;
+
+  text-align: right;
 }
 
 .inputs {
@@ -92,7 +94,7 @@ h1 {
 
 .is-zero,
 .clear {
-  grid-column: span 3;
+  grid-column: span 2;
 }
 .is-zero {
   background-color: #313131;

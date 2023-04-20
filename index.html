@@ -5,48 +5,63 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
     <title>JS Calculator</title>
   </head>
   <body>
     <div id="root">
       <h1>Calculator</h1>
       <div class="main">
-        <div class="border">
-          <div class="display">
-            <input type="text" class="small-display" disabled />
-            <input
-              type="textarea"
-              class="large-display"
-              placeholder="0"
-              maxlength="10"
-              disabled
-            />
+        <section class="head-display">
+          <div id="real-time"></div>
+          <div class="logo">
+            <i class="fas fa-signal"></i>
+            <i style="font-size: 18px" class="fa">&#xf1eb;</i>
+            <div class="battery-container">
+              <div class="battery-level"></div>
+             
+            </div>
           </div>
-          <div class="inputs">
-            <button class="is-clear">C</button>
-            <button class="delete">del</button>
-            <button class="percentage">%</button>
-            <button class="is-operator">&divide;</button>
+        </section>
+        <div class="display">
+          <input type="text" class="small-display" disabled />
+          <input
+            type="textarea"
+            class="large-display"
+            placeholder="0"
+            maxlength="10"
+            disabled
+          />
+        </div>
+        <div class="inputs">
+          <button class="is-clear">C</button>
+          <button class="delete">del</button>
+          <button class="percentage">%</button>
+          <button class="is-operator">&divide;</button>
 
-            <button class="is-num">7</button>
-            <button class="is-num">8</button>
-            <button class="is-num">9</button>
-            <button class="is-operator">&times;</button>
+          <button class="is-num">7</button>
+          <button class="is-num">8</button>
+          <button class="is-num">9</button>
+          <button class="is-operator">&times;</button>
 
-            <button class="is-num">4</button>
-            <button class="is-num">5</button>
-            <button class="is-num">6</button>
-            <button class="is-operator">&minus;</button>
+          <button class="is-num">4</button>
+          <button class="is-num">5</button>
+          <button class="is-num">6</button>
+          <button class="is-operator">&minus;</button>
 
-            <button class="is-num">1</button>
-            <button class="is-num">2</button>
-            <button class="is-num">3</button>
-            <button class="is-operator">&plus;</button>
+          <button class="is-num">1</button>
+          <button class="is-num">2</button>
+          <button class="is-num">3</button>
+          <button class="is-operator">&plus;</button>
 
-            <button class="is-num is-zero">0</button>
-            <button class="decimal">.</button>
-            <button class="is-equals">&equals;</button>
-          </div>
+          <button class="is-num is-zero">0</button>
+          <button class="decimal">.</button>
+          <button class="is-equals">&equals;</button>
         </div>
       </div>
     </div>

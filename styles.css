@@ -127,6 +127,7 @@ h1 {
   flex-direction: column;
   height: 200px;
 }
+
 .head-display {
   display: flex;
   justify-content: space-between;
@@ -134,7 +135,7 @@ h1 {
 }
 .battery-container {
   width: 30px;
-  height: 20px;
+  height: 15px;
   border: 1px solid white;
   border-radius: 5px;
   position: relative;
@@ -154,7 +155,6 @@ h1 {
 }
 
 .display input {
-  text-align: right;
   border: none;
 
   background-color: black;
@@ -166,14 +166,13 @@ h1 {
   font-size: 25px;
   margin-bottom: 2px;
   margin-top: 1em;
-
-  text-align: left;
 }
 
 .large-display {
   font-size: 40px;
   margin-bottom: 0;
   height: 100px;
+  text-align: right;
 }
 
 .inputs {

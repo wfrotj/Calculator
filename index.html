@@ -8,69 +8,48 @@
     <title>JS Calculator</title>
   </head>
   <body>
-    <!--<div class="main">
-      <section class="button-container">
-        <h1 class="head" id="head"></h1>
-        <button class="seven" id="seven">7</button>
-        <button class="eight" id="eight">8</button>
-        <button class="nine" id="nine">9</button>
-        <button class="divide" id="divide">&#247;</button>
-        <button class="four" id="four">4</button>
-        <button class="five" id="five">5</button>
-        <button class="six" id="six">6</button>
-        <button class="multiply" id="multiply">x</button>
-        <button class="one" id="one">1</button>
-        <button class="two" id="two">2</button>
-        <button class="three" id="three">3</button>
-        <button class="substract" id="substract">-</button>
-        <button class="zero" id="zero">0</button>
-        <button class="point" id="point">.</button>
-        <button class="addition" id="addition">+</button>
-        <button class="equals" id="equals">&equals;</button>
-        <button class="clear">C</button>
-        <button class="delete">del</button>
-      </section>
-    </div> -->
     <div id="root">
       <h1>Calculator</h1>
       <div class="main">
-        <div class="display">
-          <p class="small-display"></p>
-          <p
-            type="number"
-            class="large-display"
-            id="large-display"
-            disabled
-            maxlength="10"
-          ></p>
-        </div>
-        <div class="inputs">
-          <button class="clear">C</button>
-          <button class="reset">del</button>
-          <button id="divide" class="operators">&divide;</button>
+        <div class="border">
+          <div class="display">
+            <input type="text" class="small-display" disabled />
+            <input
+              type="textarea"
+              class="large-display"
+              placeholder="0"
+              maxlength="10"
+              disabled
+            />
+          </div>
+          <div class="inputs">
+            <button class="is-clear">C</button>
+            <button class="delete">del</button>
+            <button class="percentage">%</button>
+            <button class="is-operator">&divide;</button>
 
-          <button class="is-num">7</button>
-          <button class="is-num">8</button>
-          <button class="is-num">9</button>
-          <button id="times" class="operators">&times;</button>
+            <button class="is-num">7</button>
+            <button class="is-num">8</button>
+            <button class="is-num">9</button>
+            <button class="is-operator">&times;</button>
 
-          <button class="is-num">4</button>
-          <button class="is-num">5</button>
-          <button class="is-num">6</button>
-          <button id="minus" class="operators">&minus;</button>
+            <button class="is-num">4</button>
+            <button class="is-num">5</button>
+            <button class="is-num">6</button>
+            <button class="is-operator">&minus;</button>
 
-          <button class="is-num">1</button>
-          <button class="is-num">2</button>
-          <button class="is-num">3</button>
-          <button id="plus" class="operators">&plus;</button>
+            <button class="is-num">1</button>
+            <button class="is-num">2</button>
+            <button class="is-num">3</button>
+            <button class="is-operator">&plus;</button>
 
-          <button class="is-num is-zero">0</button>
-
-          <button id="equals">&equals;</button>
+            <button class="is-num is-zero">0</button>
+            <button class="decimal">.</button>
+            <button class="is-equals">&equals;</button>
+          </div>
         </div>
       </div>
     </div>
-
     <script src="script.js"></script>
   </body>
 </html>

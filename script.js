@@ -1,56 +1,97 @@
-/*const calculator = (() => {
-  const add = (a, b) => a + b;
-  const minus = (a, b) => a - b;
-  const times = (a, b) => a * b;
-  const divide = (a, b) => a / b;
-
-  return { add, minus, times, divide };
-})();
-
-const buttons = document.querySelectorAll("button");
-
-buttons.forEach(function (button) {
-  button.addEventListener("click", function () {
-    let head = document.getElementById("head");
-    head.textContent = button.innerText;
-  });
-});
-*/
-
 const numberButtons = document.querySelectorAll(".is-num");
+const operatorButtons = document.querySelectorAll(".is-operator");
+const clearButton = document.querySelector(".is-clear");
 const largeDisplay = document.querySelector(".large-display");
-const operatorsButton = document.querySelectorAll(".operators");
-const clearButton = document.querySelector(".clear");
 const smallDisplay = document.querySelector(".small-display");
-const resetButton = document.querySelector(".reset");
+const btnEquals = document.querySelector(".is-equals");
+const deleteBtn = document.querySelector("delete");
+
 let currentInput = "";
 let previousInput = "";
+let operator = undefined;
+
+function clear() {
+  currentInput = "";
+  previousInput = "";
+  operator = undefined;
+}
+
+function updateDisplay() {
+  if (currentInput === "" && largeDisplay.value === "") {
+    largeDisplay.value = "";
+  } else {
+    largeDisplay.value = currentInput;
+  }
+
+  if (operator !== undefined) {
+    smallDisplay.value = previousInput + operator;
+  } else {
+    smallDisplay.value = "";
+  }
+}
+
+function chooseOperator(chosenOperator) {
+  if (currentInput === "") return;
+  if (previousInput !== "") compute();
+
+  operator = chosenOperator;
+  previousInput = currentInput;
+  currentInput = "";
+}
+
+function appendNumber(number) {
+  currentInput += number;
+}
+
+function compute() {
+  let total = 0;
+  const previousNumber = parseInt(previousInput);
+  const currentNumber = parseInt(currentInput);
+
+  switch (operator) {
+    case "+":
+      total = previousNumber + currentNumber;
+      break;
+    case "−":
+      total = previousNumber - currentNumber;
+      break;
+    case "×":
+      total = previousNumber * currentNumber;
+      break;
+    case "÷":
+      total = previousNumber / currentNumber;
+      break;
+    default:
+      return "";
+  }
+
+  currentInput = total;
+  previousInput = "";
+  operator = undefined;
+}
 
 numberButtons.forEach((button) => {
   button.addEventListener("click", (event) => {
-    currentInput += event.target.textContent;
-    largeDisplay.textContent = currentInput;
+    if (largeDisplay.value === "" && event.target.textContent === "0") return;
+
+    appendNumber(event.target.textContent);
+    updateDisplay();
   });
 });
 
 clearButton.addEventListener("click", () => {
-  currentInput = "";
-  largeDisplay.textContent = currentInput;
+  clear();
+  updateDisplay();
 });
-resetButton.addEventListener("click", () => {
-  currentInput = "";
-  largeDisplay.textContent = currentInput;
-  previousInput = "";
-  smallDisplay.textContent = previousInput;
-});
-operatorsButton.forEach((button) => {
+
+operatorButtons.forEach((button) => {
   button.addEventListener("click", (event) => {
-    smallDisplay.textContent += largeDisplay.textContent + button.innerHTML;
-    currentInput = "";
-    largeDisplay.textContent = currentInput;
+    chooseOperator(event.target.textContent);
+    updateDisplay();
   });
 });
 
-function clearInputs() {
-  currentInput = "";
-}
+btnEquals.addEventListener("click", () => {
+  compute();
+  updateDisplay();
+});

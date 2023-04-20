@@ -4,39 +4,6 @@
   box-sizing: border-box;
 }
 /*
-.main {
-  display: flex;
-}
-
-.button-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 900px;
-  flex-wrap: wrap;
-  margin-top: 5em;
-  padding: 2em;
-}
-.head {
-  border: 2px solid black;
-  width: 280px;
-  height: 60px;
-  font-size: 30px;
-}
-button {
-  width: 70px;
-  height: 60px;
-  cursor: pointer;
-  font-size: 30px;
-  font-weight: 600;
-}
-.clear {
-  width: 140px;
-}
-.delete {
-  width: 140px;
-}*/
 #root {
   background-color: gray;
   height: 100dvh;
@@ -110,4 +77,114 @@ h1 {
 #equals {
   background-color: #f79a06 !important;
   color: white !important;
+}
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#root {
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1em;
+  background-color: #f1f3f4;
+}
+
+h1 {
+  margin-bottom: 1em;
+}
+
+.main {
+  padding: 1em;
+  border: 7px solid #a9bace;
+  border-radius: 5px;
+  width: 100%;
+  background-color: black;
+  border-radius: 30px;
+}
+
+@media screen and (min-width: 601px) and (max-width: 960px) {
+  .main {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 961px) {
+  .main {
+    max-width: 400px;
+  }
+}
+
+.display {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding: 5px;
+  display: flex;
+
+  flex-direction: column;
+  height: 200px;
+}
+
+.display input {
+  text-align: right;
+  border: none;
+  height: 50px;
+  background-color: black;
+  color: white;
+  margin-top: 1em;
+}
+
+.small-display {
+  font-size: 25px;
+  margin-bottom: 20px;
+  margin-top: 1em;
+}
+
+.large-display {
+  font-size: 40px;
+  margin-bottom: 0;
+}
+
+.inputs {
+  display: grid;
+  gap: 1em;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: black;
+  padding: 0.5em;
+}
+
+.inputs button {
+  font-size: 28px;
+  padding: 20px;
+  color: #f2f2f2;
+  background-color: #313131;
+  border: 1px solid gray;
+  border-radius: 5px;
+  border-radius: 30px;
+}
+
+.is-operator {
+  background-color: #f79a06 !important;
+  color: white !important;
+}
+
+.inputs button:hover {
+  cursor: pointer;
+}
+
+.is-equals {
+  grid-column: span 2;
+  border-radius: none !important;
+}
+.percentage,
+.delete,
+.is-clear {
+  background-color: #9f9f9f !important;
+  color: #070707 !important;
 }

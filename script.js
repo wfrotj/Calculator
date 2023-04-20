@@ -10,12 +10,6 @@ let currentInput = "";
 let previousInput = "";
 let operator = undefined;
 
-function clear() {
-  currentInput = "";
-  previousInput = "";
-  operator = undefined;
-}
-
 function updateDisplay() {
   if (currentInput === "" && largeDisplay.value === "") {
     largeDisplay.value = "";
@@ -83,6 +77,19 @@ clearButton.addEventListener("click", () => {
   clear();
   updateDisplay();
 });
+/*
+deleteBtn.addEventListener("click", () => {
+  dlte();
+});
+
+function dlte() {
+  currentInput = currentInput.slice(1);
+}*/
+function clear() {
+  currentInput = "";
+  previousInput = "";
+  operator = undefined;
+}
 
 operatorButtons.forEach((button) => {
   button.addEventListener("click", (event) => {
